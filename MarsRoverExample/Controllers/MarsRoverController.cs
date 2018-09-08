@@ -1,8 +1,8 @@
-﻿using System.Web.Http;
-using MarsRoverExample.Models;
+﻿using MarsRoverExample.Models;
 using MarsRoverExample.Repositories;
 using MarsRoverExample.Services;
 using System.Text.RegularExpressions;
+using System.Web.Http;
 
 namespace MarsRoverExample.Controllers
 {
@@ -26,41 +26,41 @@ namespace MarsRoverExample.Controllers
         #region Action Result methods
 
         [HttpPost]
-        [Route("Create/{id:int}/{name}")]
-        public IHttpActionResult Create(int id, string name)
+        [Route("Create/{RoverId:int}/{RoverName}")]
+        public IHttpActionResult Create(int RoverId, string RoverName)
         {
-            // validate parameters, require 'id' and 'name'
-            if (id == 0 || string.IsNullOrEmpty(name))
+            // validate parameters, require 'RoverId' and 'RoverName'
+            if (RoverId == 0 || string.IsNullOrEmpty(RoverName))
             {
                 return BadRequest();
             }
 
-            // create a new mars rover from user supplied parameters
+            // create a new Mars Rover from user supplied parameters
             MarsRoverEntity marsRoverEntity = new MarsRoverEntity();
-            marsRoverEntity.RoverId = id;
-            marsRoverEntity.RoverName = name;
+            marsRoverEntity.RoverId = RoverId;
+            marsRoverEntity.RoverName = RoverName;
             marsRoverEntity.CurrentX = 0;
             marsRoverEntity.CurrentY = 0;
             marsRoverEntity.CurrentDirection = "N";
 
-            // let's add it
+            // let's add the new Mars Rover
             _MarsRoverRepository.Add(marsRoverEntity);
 
             return Ok();
         }
 
         [HttpPut]
-        [Route("Rename/{id:int}/{newName}")]
-        public IHttpActionResult Rename(int? id, string newName)
+        [Route("Rename/{RoverId:int}/{RoverName}")]
+        public IHttpActionResult Rename(int? RoverId, string RoverName)
         {
-            // validate parameters, require 'id' and 'newName'
-            if (id.Equals(null) || string.IsNullOrEmpty(newName))
+            // validate parameters, require 'RoverId' and 'RoverName'
+            if (RoverId.Equals(null) || string.IsNullOrEmpty(RoverName))
             {
                 return BadRequest();
             }
 
-            // retrieve our Mars Rover by 'id'
-            var MarsRoverEntityToUpdate = _MarsRoverRepository.GetSingle(id ?? 0);
+            // retrieve our Mars Rover by 'RoverId'
+            var MarsRoverEntityToUpdate = _MarsRoverRepository.GetSingle(RoverId ?? 0);
 
             if (MarsRoverEntityToUpdate.Equals(null))
             {
@@ -68,7 +68,7 @@ namespace MarsRoverExample.Controllers
             }
 
             // 'rename' the Mars Rover
-            MarsRoverEntityToUpdate.RoverName = newName;
+            MarsRoverEntityToUpdate.RoverName = RoverName;
 
             // persist our changes to the Mars Rover
             var MarsRoverEntity = _MarsRoverRepository.Update(MarsRoverEntityToUpdate);
@@ -77,32 +77,32 @@ namespace MarsRoverExample.Controllers
         }
 
         [HttpPut]
-        [Route("Move/{id:int}/{instruction}")]
-        public IHttpActionResult Move(int? id, string instruction)
+        [Route("Move/{RoverId:int}/{MovementInstruction}")]
+        public IHttpActionResult Move(int? RoverId, string MovementInstruction)
         {
-            // validate parameters 'id' & 'instruction', make sure not null or empty
-            if (id.Equals(null) || string.IsNullOrEmpty(instruction))
+            // validate parameters 'RoverId' & 'MovementInstruction', make sure not null or empty and make sure instructions does not allow spaces
+            if (RoverId.Equals(null) || string.IsNullOrEmpty(MovementInstruction) || MovementInstruction.Contains(" "))
             {
                 return BadRequest();
             }
 
-            // validation - filter out the bad rover instructions via regular expression 
+            // validation - filter out the bad rover movement instructions via regular expression 
             var regex = new Regex(@"L|R|M"); // only allow characters "L", "R", and "M" (per requirements)
-            var match = regex.Match(instruction);
+            var match = regex.Match(MovementInstruction);
             if (!match.Success)
             {
                 return BadRequest(); //to-do: fix me with custom response? not enough time to get fancy....
             }
 
-            var MarsRoverEntityToUpdate = _MarsRoverRepository.GetSingle(id ?? 0);
+            var MarsRoverEntityToUpdate = _MarsRoverRepository.GetSingle(RoverId ?? 0);
 
             if (MarsRoverEntityToUpdate.Equals(null))
             {
                 return NotFound();
             }
 
-            // to-do: 'move' the Mars Rover here, perform calculations and changes/updates here ??...
-            foreach(char c in instruction)
+            // to-do: 'move' the Mars Rover with instructions here, perform calculations and changes/updates here ??...
+            foreach(char c in MovementInstruction)
             {
                 switch (c)
                 {
@@ -125,17 +125,17 @@ namespace MarsRoverExample.Controllers
         }
 
         [HttpGet]
-        [Route("GetPosition/{id:int?}")]
-        public IHttpActionResult GetPosition(int? id)
+        [Route("GetPosition/{RoverId:int?}")]
+        public IHttpActionResult GetPosition(int? RoverId)
         {
-            // validate parameters, require 'id'
-            if (id.Equals(null))
+            // validate parameters, require 'RoverId'
+            if (RoverId.Equals(null))
             {
                 return BadRequest();
             }
 
-            // retrieve Mars Rover by id
-            var MarsRoverEntity = _MarsRoverRepository.GetSingle(id ?? 0);
+            // retrieve Mars Rover by 'RoverId'
+            var MarsRoverEntity = _MarsRoverRepository.GetSingle(RoverId ?? 0);
 
             if (MarsRoverEntity.Equals(null))
             {

@@ -101,3 +101,42 @@ C:\Users\hollorit\Desktop\MarsRover\MarsRoverExample\bin\Mars Rover Example.pdb
 C:\Users\hollorit\Desktop\MarsRover\MarsRoverExample\obj\Debug\Mars Rover Example.dll
 C:\Users\hollorit\Desktop\MarsRover\MarsRoverExample\obj\Debug\Mars Rover Example.pdb
 C:\Users\hollorit\Desktop\MarsRover\MarsRoverExample\obj\Debug\MarsRoverExample.csprojResolveAssemblyReference.cache
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Mars Rover Example.dll.config
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Mars Rover Example.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Mars Rover Example.pdb
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Microsoft.Data.Edm.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Microsoft.Owin.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Microsoft.Web.Infrastructure.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Newtonsoft.Json.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Ninject.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Ninject.Web.Common.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Owin.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Swashbuckle.Core.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\System.Net.Http.Formatting.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\System.Web.Http.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\System.Web.Http.Owin.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\System.Web.Http.WebHost.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\WebActivatorEx.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\WebApiContrib.IoC.Ninject.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Microsoft.Data.Edm.xml
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Microsoft.Owin.xml
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Newtonsoft.Json.xml
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Ninject.xml
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\Ninject.Web.Common.xml
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\System.Net.Http.Formatting.xml
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\System.Web.Http.xml
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\System.Web.Http.Owin.xml
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\System.Web.Http.WebHost.xml
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\obj\Debug\Mars Rover Example.dll
+C:\Workspace\_Code\MarsRover\MarsRoverExample\obj\Debug\Mars Rover Example.pdb

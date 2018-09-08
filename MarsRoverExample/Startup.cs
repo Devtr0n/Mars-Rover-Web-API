@@ -1,13 +1,13 @@
-﻿using Microsoft.Owin;
+﻿using MarsRoverExample.Repositories;
+using MarsRoverExample.Services;
+using Microsoft.Owin;
 using Ninject;
 using Ninject.Web.Common;
 using Owin;
-using MarsRoverExample.Repositories;
-using MarsRoverExample.Services;
+using Swashbuckle.Application;
+using System.Linq;
 using System.Web.Http;
 using WebApiContrib.IoC.Ninject;
-using System.Linq;
-using Swashbuckle.Application;
 
 [assembly: OwinStartup(typeof(MarsRoverExample.Startup))]
 
@@ -27,11 +27,16 @@ namespace MarsRoverExample
             config.MapHttpAttributeRoutes();
 
             // enable 'Swagger' API documentation
-            config.EnableSwagger(c => c.SingleApiVersion("v1", "Mars Rover API")).EnableSwaggerUi();
+            config
+                .EnableSwagger(c =>
+                {
+                    //c.RootUrl(req => SwaggerDocsConfig.DefaultRootUrlResolver(req)); //this doesn't work because...OWIN? I need to upgrade to .Core...
+                    c.SingleApiVersion("v1", "Mars Rover API").Description("This is Richard Hollon's Mars Rover Web API example using: C#, .NET Framework 4.6.1, JSON, OWIN, Ninject DI, RESTful Web API services and Swagger documentation.");
+                }).EnableSwaggerUi();
 
-            // keep API 'default'
+            // keep API routing 'default'
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
+                name: "MarsRoverApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
@@ -40,7 +45,7 @@ namespace MarsRoverExample
             var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
             config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
 
-            // let's get configured
+            // let's get configured now
             app.UseWebApi(config);
         }
 

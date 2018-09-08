@@ -1,6 +1,6 @@
+using MarsRoverExample.Models;
 using System.Collections.Generic;
 using System.Linq;
-using MarsRoverExample.Models;
 
 namespace MarsRoverExample.Repositories
 {

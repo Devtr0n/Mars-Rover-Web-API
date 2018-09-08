@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MarsRoverExample")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Mars Rover Example")]
+[assembly: AssemblyDescription("C# Web API example using .NET 4.6.1, JSON, OWIN, Ninject DI and Swagger documentation")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MarsRoverExample")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCompany("Richard Hollon")]
+[assembly: AssemblyProduct("Mars Rover Example Web API v1")]
+[assembly: AssemblyCopyright("Copyright © 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
