@@ -88,12 +88,12 @@ namespace MarsRoverExample.Controllers
                 return BadRequest();
             }
 
-            // validation - filter out the bad rover movement instructions via regular expression 
-            var regex = new Regex(@"L|R|M"); // only allow characters "L", "R", and "M" (per requirements)
-            var match = regex.Match(MovementInstruction);
-            if (!match.Success)
+            // validation - filter out the bad rover movement instructions
+            var allowableLetters = "LRM";
+            foreach (char c in MovementInstruction)
             {
-                return BadRequest(); //to-do: fix me with custom response? not enough time to get fancy....
+                if (!allowableLetters.Contains(c.ToString()))
+                    return BadRequest();
             }
 
             var MarsRoverEntityToUpdate = _MarsRoverRepository.GetSingle(RoverId ?? 0);
