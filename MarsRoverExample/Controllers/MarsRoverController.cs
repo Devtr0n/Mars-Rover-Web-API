@@ -1,9 +1,10 @@
-﻿using MarsRoverExample.Models;
+using MarsRoverExample.Models;
 using MarsRoverExample.Repositories;
 using MarsRoverExample.Rover;
 using MarsRoverExample.Services;
 using System;
 using System.Web.Http;
+using static MarsRoverExample.Rover.Rover;
 
 namespace MarsRoverExample.Controllers
 {
@@ -94,9 +95,9 @@ namespace MarsRoverExample.Controllers
                 if (!allowableLetters.Contains(c.ToString()))
                     return BadRequest();
             }
-
+            
+            // verify the desired Rover exists
             var MarsRoverEntityToUpdate = _MarsRoverRepository.GetSingle(RoverId ?? 0);
-
             if (MarsRoverEntityToUpdate.Equals(null))
             {
                 return NotFound();
@@ -105,7 +106,7 @@ namespace MarsRoverExample.Controllers
             // 'move' the Mars Rover with our 'move instructions' 
             Position _position = new Position(MarsRoverEntityToUpdate.CurrentX, MarsRoverEntityToUpdate.CurrentY);
             Plateau _plateau = new Plateau(new Position(6, 6));
-            Rover.Rover.Orientations orientation = (Rover.Rover.Orientations)Enum.Parse(typeof(Rover.Rover.Orientations), MarsRoverEntityToUpdate.CurrentDirection);
+            Orientations orientation = (Orientations)Enum.Parse(typeof(Orientations), MarsRoverEntityToUpdate.CurrentDirection);
             var _rover = new Rover.Rover(_position, orientation, _plateau);
             _rover.Process(MovementInstruction); //perform the 'move'
 
