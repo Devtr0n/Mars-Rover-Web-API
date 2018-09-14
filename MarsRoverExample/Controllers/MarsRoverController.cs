@@ -3,7 +3,6 @@ using MarsRoverExample.Repositories;
 using MarsRoverExample.Rover;
 using MarsRoverExample.Services;
 using System;
-using System.Text.RegularExpressions;
 using System.Web.Http;
 
 namespace MarsRoverExample.Controllers
