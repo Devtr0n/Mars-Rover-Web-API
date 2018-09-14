@@ -10,6 +10,7 @@ namespace MarsRoverExample.Repositories
 
         public MarsRoverRepository()
         {
+           // _MarsRovers.Add(1, new MarsRoverEntity() { RoverId = 1, RoverName = "Rover One", CurrentX = 1, CurrentY = 2, CurrentDirection = "N" }); // create the initial Mars Rover
             _MarsRovers.Add(1, new MarsRoverEntity() { RoverId = 1, RoverName = "Rover One", CurrentX = 0, CurrentY = 0, CurrentDirection = "N" }); // create the initial Mars Rover
         }
 

@@ -140,3 +140,4 @@ C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\zh-Hans\Microsoft.Data.Edm.res
 C:\Workspace\_Code\MarsRover\MarsRoverExample\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
 C:\Workspace\_Code\MarsRover\MarsRoverExample\obj\Debug\Mars Rover Example.dll
 C:\Workspace\_Code\MarsRover\MarsRoverExample\obj\Debug\Mars Rover Example.pdb
+C:\Workspace\_Code\MarsRover\MarsRoverExample\obj\Debug\MarsRoverExample.csprojResolveAssemblyReference.cache

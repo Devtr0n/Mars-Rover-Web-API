@@ -130,6 +130,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\MarsRoverRepository.cs" />
     <Compile Include="Repositories\IMarsRoverRepository.cs" />
+    <Compile Include="Rover\IPlateau.cs" />
+    <Compile Include="Rover\IPosition.cs" />
+    <Compile Include="Rover\IRover.cs" />
+    <Compile Include="Rover\Plateau.cs" />
+    <Compile Include="Rover\Position.cs" />
+    <Compile Include="Rover\Rover.cs" />
+    <Compile Include="Rover\Utils.cs" />
     <Compile Include="Services\MarsRoverMapper.cs" />
     <Compile Include="Services\IMarsRoverMapper.cs" />
     <Compile Include="Startup.cs" />

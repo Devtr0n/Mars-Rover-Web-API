@@ -1,6 +1,8 @@
 ﻿using MarsRoverExample.Models;
 using MarsRoverExample.Repositories;
+using MarsRoverExample.Rover;
 using MarsRoverExample.Services;
+using System;
 using System.Text.RegularExpressions;
 using System.Web.Http;
 
@@ -101,25 +103,18 @@ namespace MarsRoverExample.Controllers
                 return NotFound();
             }
 
-            // to-do: 'move' the Mars Rover with instructions here, perform calculations and changes/updates here ??...
-            foreach(char c in MovementInstruction)
-            {
-                switch (c)
-                {
-                    case 'L':
-                        //MarsRoverEntityToUpdate.CurrentX = ???
-                        break;
-                    case 'R':
-                        //MarsRoverEntityToUpdate.CurrentY = ???
-                        break;
-                    case 'M':
-                        //MarsRoverEntityToUpdate.CurrentDirection = ??? based off cardinal compass points
-                        break;
-                }
-            }
+            // 'move' the Mars Rover with our 'move instructions' 
+            Position _position = new Position(MarsRoverEntityToUpdate.CurrentX, MarsRoverEntityToUpdate.CurrentY);
+            Plateau _plateau = new Plateau(new Position(6, 6));
+            Rover.Rover.Orientations orientation = (Rover.Rover.Orientations)Enum.Parse(typeof(Rover.Rover.Orientations), MarsRoverEntityToUpdate.CurrentDirection);
+            var _rover = new Rover.Rover(_position, orientation, _plateau);
+            _rover.Process(MovementInstruction); //perform the 'move'
 
-            // update our Mars Rover's new 'move'
-            var MarsRoverEntity = _MarsRoverRepository.Update(MarsRoverEntityToUpdate); 
+            // update our Mars Rover values with the new coordinates
+            MarsRoverEntityToUpdate.CurrentX = _rover.RoverPosition.X;
+            MarsRoverEntityToUpdate.CurrentY = _rover.RoverPosition.Y;
+            MarsRoverEntityToUpdate.CurrentDirection = _rover.RoverOrientation.GetStringValue();
+            var MarsRoverEntity = _MarsRoverRepository.Update(MarsRoverEntityToUpdate);
 
             return Ok(_MarsRoverMapper.MapToDto(MarsRoverEntity));
         }
